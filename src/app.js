@@ -31,7 +31,6 @@ io.on('connection', (socket) => {
     socket.emit('db', messages)
 
     socket.on('sendMessage', (data) => {
-        console.log(data)
         messages.push(data)
         socket.broadcast.emit('newMessage', data)
     })
