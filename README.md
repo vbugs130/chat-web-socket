@@ -9,4 +9,4 @@ Este chat real-time feito com JavaScript, html e css simples somente para demont
 Criei este chat para que eu pudesse aprender a utilizar o socket.io
 
 
-`<img src="https://github.com/vbugs130/chat/blob/master/src/public/imagens/tela.png" display="inline"/>`
+<img src="https://github.com/vbugs130/chat/blob/master/src/public/imagens/tela.png" display="inline"/>
