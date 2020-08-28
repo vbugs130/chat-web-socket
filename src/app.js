@@ -27,9 +27,9 @@ let messages = []
 
 io.on('connection', (socket) => {
     console.log('Socket conectado')
-
     socket.emit('db', messages)
-
+    socket.emit('usersCount', io.sockets.server.engine.clientsCount)
+    cont()
     socket.on('sendMessage', (data) => {
         messages.push(data)
         socket.broadcast.emit('newMessage', data)
@@ -37,7 +37,12 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         console.log('socket desconectdo')
+        cont()
     })
+
+    function cont() {
+        socket.broadcast.emit('usersCount', io.sockets.server.engine.clientsCount)
+    }
 })
 
 app.use(router)
