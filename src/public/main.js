@@ -29,7 +29,9 @@ form.addEventListener('submit', (e) => {
 
     socket.emit('sendMessage', messageObject)
     addMessage(messageObject)
-    document.getElementById('message').value = ''
+    message = document.getElementById('message')
+    message.value = ''
+    message.focus()
 })
 
 function addMessage({
