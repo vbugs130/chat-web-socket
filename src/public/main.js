@@ -17,7 +17,7 @@ socket.on('db', db => {
 socket.on('usersCount', (data) => {
     let botao = document.getElementById('enviar')
 
-    botao.innerText = `Enviar para ${data}`
+    botao.innerText = `Enviar para ${data - 1}`
 })
 
 let messages = document.getElementById('messages')
