@@ -3,6 +3,8 @@ let mdsleng = 0
 
 socket.on('connect', (cliente) => {
     console.log('socket conectado')
+    document.getElementById('messages').innerHTML = ''
+        // document.location.reload()
 })
 socket.on('newMessage', data => {
     addMessage(data)
@@ -10,8 +12,12 @@ socket.on('newMessage', data => {
 socket.on('db', db => {
     for (message of db) {
         addMessage(message)
-
     }
+})
+socket.on('usersCount', (data) => {
+    let botao = document.getElementById('enviar')
+
+    botao.innerText = `Enviar para ${data}`
 })
 
 let messages = document.getElementById('messages')
