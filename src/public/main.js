@@ -1,4 +1,5 @@
 let socket = io();
+let mdsleng = 0
 
 socket.on('connect', (cliente) => {
     console.log('socket conectado')
@@ -39,4 +40,5 @@ function addMessage({
     let p = document.createElement('p')
     p.innerHTML = `<strong>${author}</strong>: ${message}`
     messages.appendChild(p)
+    messages.scroll(0, 100 * mdsleng++)
 }
